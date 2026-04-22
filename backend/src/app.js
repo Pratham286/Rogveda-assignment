@@ -27,9 +27,10 @@ app.use(express.static("public"))
 app.use("/api/vendor", vendorRoutes);
 app.use("/api/booking", bookingRoutes);
 app.use("/api/hospitals", hospitalsRoutes);
-app.use("/api/patient", patientRoutes);
+app.use("/api/patients", patientRoutes);
 
 app.use((err, req, res, next) => {
+  console.log(err);
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal Server Error";
 
