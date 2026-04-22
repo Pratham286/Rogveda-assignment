@@ -3,6 +3,7 @@ import cors from 'cors'
 import vendorRoutes from "./routes/vendor.route.js";
 import bookingRoutes from "./routes/booking.route.js";
 import hospitalsRoutes from "./routes/hospitals.route.js";
+import patientRoutes from "./routes/patient.route.js";
 
 
 const app = express();
@@ -26,6 +27,7 @@ app.use(express.static("public"))
 app.use("/api/vendor", vendorRoutes);
 app.use("/api/booking", bookingRoutes);
 app.use("/api/hospitals", hospitalsRoutes);
+app.use("/api/patient", patientRoutes);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
