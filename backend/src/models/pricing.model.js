@@ -10,6 +10,6 @@ const pricingSchema = new mongoose.Schema({
   priceUSD: Number,
 });
 
-pricingSchema.index({ hospitalId: 1, doctorId: 1 }); 
+pricingSchema.index({ hospitalId: 1, doctorId: 1, roomType: 1 });
 
 export default mongoose.model('Pricing', pricingSchema);
