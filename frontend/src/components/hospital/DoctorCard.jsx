@@ -84,17 +84,17 @@ export const DoctorCard = ({ row, onBookNow, style }) => {
           <DoctorAvatar name={doctor.name} photo={doctor.photo} />
           <div className="flex-1 min-w-0">
             <h3 className="font-display font-semibold text-slate-900 text-base leading-tight line-clamp-1">
-              {doctor.name}
+              {hospital.name}
             </h3>
+            <p className="text-slate-700 text-xs font-body mt-1 flex items-center gap-1 line-clamp-1">
+              <span className="text-brand-600">🏥</span>
+              <span className="font-medium">{doctor.name}</span>
+            </p>
             <p className="text-slate-600 text-xs font-body mt-0.5 flex items-center gap-1">
               <span className="text-amber-500">★</span>
               <span className="font-semibold text-slate-700">{rating}</span>
               <span className="text-slate-400">·</span>
               <span>{doctor.experience}+ yrs exp</span>
-            </p>
-            <p className="text-slate-700 text-xs font-body mt-1 flex items-center gap-1 line-clamp-1">
-              <span className="text-brand-600">🏥</span>
-              <span className="font-medium">{hospital.name}</span>
             </p>
             <p className="text-slate-500 text-[11px] font-body mt-0.5 flex items-center gap-1 line-clamp-1">
               <span>📍</span> {hospital.location}
@@ -163,9 +163,9 @@ export const DoctorCard = ({ row, onBookNow, style }) => {
 
         {/* BNPL note */}
         <div className="bg-brand-50 border border-brand-100 rounded-xl px-3 py-2.5 flex items-start gap-2">
-          <span className="text-brand-600 text-sm mt-0.5 flex-shrink-0">✦</span>
+          {/* <span className="text-brand-600 text-sm mt-0.5 flex-shrink-0">✦</span> */}
           <p className="text-xs text-brand-700 font-body leading-relaxed">
-            <span className="font-semibold">Book Now, Pay Later</span> — No upfront payment. Confirm your slot today and pay after arrival.
+            <span className="font-semibold">Book Now, Pay Later</span>
           </p>
         </div>
       </div>

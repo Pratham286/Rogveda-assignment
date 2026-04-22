@@ -1,8 +1,3 @@
-// Flattens API hospital response into a flat list of doctor "rows".
-// Each row contains: doctor, hospital context, pricing info.
-// The API shape is: hospital = { _id, name, location, procedure, image, accreditation,
-//   lowestPrice, doctors: [{ _id, name, experience, pricing: { RoomType: usd } }] }
-
 export const ROOM_ORDER = ["General Ward", "Semi-Private", "Private", "Suite"];
 
 export const sortRooms = (rooms) =>

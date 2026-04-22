@@ -7,19 +7,6 @@ import { Button } from "../components/ui/Button";
 import { searchHospitals } from "../api/hospitals";
 import { flattenToDoctorRows, sortDoctorRows, SORT_OPTIONS } from "../utils/hospitalData";
 
-const TRUST_STATS = [
-  { icon: "🌍", value: "12,000+", label: "International Patients" },
-  { icon: "🏥", value: "50+",     label: "Accredited Hospitals" },
-  { icon: "✈️", value: "80+",     label: "Countries Served" },
-  { icon: "⭐", value: "4.9/5",    label: "Patient Rating" },
-];
-
-const POPULAR_SEARCHES = [
-  "Total Knee Replacement in Delhi",
-  "Cardiac Bypass in Mumbai",
-  "Hip Replacement India",
-];
-
 export default function SearchPage() {
   const [query, setQuery] = useState("");
   const [hospitals, setHospitals] = useState([]);
@@ -33,8 +20,8 @@ export default function SearchPage() {
 
   // Auto-search on mount
   useEffect(() => {
-    handleSearch("Total Knee Replacement in Delhi");
-    setQuery("Total Knee Replacement in Delhi");
+    handleSearch("Total Knee Replacement");
+    setQuery("Total Knee Replacement");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -109,31 +96,8 @@ export default function SearchPage() {
               </Button>
             </div>
 
-            {/* Popular searches */}
-            <div className="flex flex-wrap gap-2 mt-3 justify-center">
-              <span className="text-xs text-slate-400 font-body self-center">Popular:</span>
-              {POPULAR_SEARCHES.map((s) => (
-                <button
-                  key={s}
-                  onClick={() => { setQuery(s); handleSearch(s); }}
-                  className="text-xs px-3 py-1 bg-slate-100 hover:bg-brand-50 hover:text-brand-700 border border-slate-200 hover:border-brand-200 rounded-full text-slate-600 font-body transition-colors cursor-pointer"
-                >
-                  {s}
-                </button>
-              ))}
-            </div>
           </div>
 
-          {/* Trust stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 max-w-2xl mx-auto">
-            {TRUST_STATS.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-2xl mb-1">{stat.icon}</div>
-                <div className="font-display font-bold text-slate-900 text-lg">{stat.value}</div>
-                <div className="text-xs text-slate-500 font-body">{stat.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -248,9 +212,8 @@ export default function SearchPage() {
         <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-slate-400 font-body">© Rogveda 2026 · All rights reserved</p>
           <div className="flex items-center gap-4 text-xs text-slate-500 font-body">
-            <a href="#" className="hover:text-brand-700">Privacy</a>
-            <a href="#" className="hover:text-brand-700">Terms</a>
-            <a href="mailto:hello@rogveda.com" className="hover:text-brand-700">hello@rogveda.com</a>
+            <a className="hover:text-brand-700">Privacy</a>
+            <a className="hover:text-brand-700">Terms</a>
           </div>
         </div>
       </footer>

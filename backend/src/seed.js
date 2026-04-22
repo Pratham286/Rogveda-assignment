@@ -81,13 +81,13 @@ const seed = async () => {
   ]);
 
   // ── Dummy Patient ───────────────────────────────────────
-  await Patient.create({
-    name: 'John Mensah',
-    email: 'john@example.com',
-    phone: '+2348012345678',
-    country: 'Nigeria',
-    walletBalance: 0,
-  });
+  // await Patient.create({
+  //   name: 'John Mensah',
+  //   email: 'john@example.com',
+  //   phone: '+2348012345678',
+  //   country: 'Nigeria',
+  //   walletBalance: 0,
+  // });
 
   console.log('Seeded successfully!');
   console.log(`  Hospitals : 3`);

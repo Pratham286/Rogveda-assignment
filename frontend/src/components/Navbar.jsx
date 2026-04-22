@@ -22,21 +22,16 @@ export const Navbar = ({ showCurrency = true }) => {
         {/* Right */}
         <div className="flex items-center gap-2 sm:gap-3">
           {showCurrency && <CurrencyToggle />}
-          <a
-            href="https://wa.me/911234567890"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp Support"
-            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 bg-green-50 border border-green-200 rounded-xl text-xs font-medium text-green-700 hover:bg-green-100 transition-colors font-body"
-          >
-            <span>💬</span> WhatsApp
-          </a>
           <button
-            onClick={() => navigate("/vendor/login")}
-            className="text-xs text-slate-500 hover:text-brand-700 font-body font-medium transition-colors cursor-pointer px-2 py-1"
-          >
-            Vendor →
-          </button>
+  onClick={() => navigate("/vendor/login")}
+  className="group inline-flex items-center gap-1 text-xs font-body font-medium text-slate-500 hover:text-brand-700 transition-colors px-2 py-1 rounded-md hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
+  aria-label="Go to vendor login"
+>
+  Vendor
+  <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">
+    →
+  </span>
+</button>
         </div>
       </div>
     </header>
