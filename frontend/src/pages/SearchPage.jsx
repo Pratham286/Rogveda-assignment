@@ -43,10 +43,8 @@ export default function SearchPage() {
     setSearched(true);
     try {
       const data = await searchHospitals(searchQuery);
-      // console.log(data);
       setHospitals(data);
     } catch (e) {
-      console.log(e);
       setError(e.message || "Failed to fetch hospitals. Please try again.");
       setHospitals([]);
     } finally {
@@ -189,7 +187,7 @@ export default function SearchPage() {
                 key={hospital._id}
                 hospital={hospital}
                 onBookNow={openBooking}
-                style={{ animationDelay: `${i * 80}ms`, opacity: 0, animation: `fadeUp 0.4s ease ${i * 80}ms forwards` }}
+                style={{ animation: `fadeUp 0.4s ease ${i * 80}ms both` }}
               />
             ))}
           </div>

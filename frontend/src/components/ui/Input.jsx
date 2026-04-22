@@ -26,25 +26,28 @@ export const Select = ({ label, error, className = "", children, ...props }) => 
     {label && (
       <label className="text-sm font-medium text-slate-700 font-body">{label}</label>
     )}
-    <select
-      className={`
-        w-full px-4 py-2.5 rounded-xl border font-body text-sm
-        bg-white text-slate-800
-        transition-colors duration-150 cursor-pointer
-        ${error
-          ? "border-red-300 focus:border-red-500"
-          : "border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
-        }
-        outline-none appearance-none
-        bg-[url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E")]
-        bg-[position:right_12px_center] bg-no-repeat bg-[length:20px]
-        pr-10
-        ${className}
-      `}
-      {...props}
-    >
-      {children}
-    </select>
+    <div className="relative">
+      <select
+        className={`
+          w-full px-4 py-2.5 pr-10 rounded-xl border font-body text-sm
+          bg-white text-slate-800
+          transition-colors duration-150 cursor-pointer
+          ${error
+            ? "border-red-300 focus:border-red-500"
+            : "border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+          }
+          outline-none appearance-none
+          ${className}
+        `}
+        {...props}
+      >
+        {children}
+      </select>
+      {/* Custom chevron — avoids broken inline-SVG Tailwind URL syntax */}
+      <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs">
+        ▾
+      </span>
+    </div>
     {error && <p className="text-xs text-red-500 font-body">{error}</p>}
   </div>
 );
