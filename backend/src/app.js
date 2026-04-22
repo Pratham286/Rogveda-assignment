@@ -13,6 +13,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
+      "https://rogveda-frontend.onrender.com/"
     ],
     credentials: true,
   }),
