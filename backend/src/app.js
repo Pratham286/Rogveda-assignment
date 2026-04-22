@@ -30,7 +30,7 @@ app.use("/api/hospitals", hospitalsRoutes);
 app.use("/api/patients", patientRoutes);
 
 app.use((err, req, res, next) => {
-  console.log(err);
+  // console.log(err);
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal Server Error";
 

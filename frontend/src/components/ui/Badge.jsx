@@ -5,10 +5,18 @@ const variants = {
   slate:   "bg-slate-100 text-slate-600 border border-slate-200",
   red:     "bg-red-50 text-red-600 border border-red-200",
   purple:  "bg-purple-50 text-purple-700 border border-purple-200",
+  indigo:  "bg-indigo-50 text-indigo-700 border border-indigo-200",
+  rose:    "bg-rose-50 text-rose-700 border border-rose-200",
 };
 
-export const Badge = ({ children, variant = "green", className = "" }) => (
-  <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium font-body ${variants[variant]} ${className}`}>
+const sizes = {
+  sm: "text-[10px] px-1.5 py-0.5",
+  md: "text-xs px-2 py-0.5",
+  lg: "text-sm px-2.5 py-1",
+};
+
+export const Badge = ({ children, variant = "green", size = "md", className = "" }) => (
+  <span className={`inline-flex items-center gap-1 rounded-full font-medium font-body ${variants[variant]} ${sizes[size]} ${className}`}>
     {children}
   </span>
 );
